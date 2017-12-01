@@ -2,11 +2,13 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
  
 bot.on('message', (message) => {
+    var text = Html.encode(message.content);
     if(message.content == "Fairy-Bot"){
         message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro');
-    }   
-    if(message.content.toLowerCase() == "poke"){
+    }  
+    if(text.toLowerCase() == "poke"){
         message.channel.send('ouch');
+    
     }
      
  
