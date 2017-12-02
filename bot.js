@@ -13,16 +13,16 @@ bot.on('message', (message) => {
     if(message.content == "!rps"){
         message.channel.send('Rock Paper Scissors! Type !rps (:fist:/:v:/:raised_hand:) to play!');
     }
-    if(message.content == "!rps :fist:"){
+    if(new RegExp('^!rps :fist:').exec(message.content)){
         message.channel.send(':raised_hand: Paper beats rock! I win!');
     }   
-    if(message.content == "!rps :v:"){
+    if(new RegExp('^!rps :v:').exec(message.content)){
         message.channel.send(':fist: Rock beats scissors! I win!');
     }  
-    if(message.content == "!rps :raised_hand:"){
+    if(new RegExp('^!rps :raised_hand:').exec(message.content)){
         message.channel.send(':fist: Paper beats rock! You win....');
     }  
-    if(new RegExp('^!macro').exec(message.content) ){
+    if(new RegExp('^!macro').exec(message.content)){
  
         var data = message.content.toLowerCase().split(' ');
         if(data.length == 1) {
@@ -36,12 +36,7 @@ bot.on('message', (message) => {
         }
  
     }
-    if(new RegExp('^!repeat').exec(message.content) ){
- 
-        var data = message.content.toLowerCase().split(' ');
-        message.channel.send(data[1]);
- 
-    }
+    
 });
  
 bot.login(process.env.BOT_TOKEN);
