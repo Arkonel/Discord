@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
  
 bot.on('message', (message) => {
-    
+    if (message.author.bot) return;
+ 
     if(message.content == "Fairy-Bot"){
         message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro');
     }  
