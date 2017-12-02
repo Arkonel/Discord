@@ -10,8 +10,9 @@ bot.on('message', (message) => {
         message.channel.send('ouchy');
     
     }
-     
- 
+    if(message.content == "!rps"){
+        message.channel.send('type !rps (:fist:/:v:/:raised_hand:) to play!');
+    }
     if(new RegExp('^!macro').exec(message.content) ){
  
         var data = message.content.toLowerCase().split(' ');
