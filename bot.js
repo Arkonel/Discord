@@ -4,15 +4,24 @@ const bot = new Discord.Client();
 bot.on('message', (message) => {
     
     if(message.content == "Fairy-Bot"){
-        message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro');
+        message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro\n!rps');
     }  
     if(message.content.toLowerCase() == "poke"){
         message.channel.send('ouchy');
     
     }
     if(message.content == "!rps"){
-        message.channel.send('type !rps (:fist:/:v:/:raised_hand:) to play!');
+        message.channel.send('Rock Paper Scissors! Type !rps (:fist:/:v:/:raised_hand:) to play!');
     }
+    if(message.content == "!rps :fist:"){
+        message.channel.send(':raised_hand: Paper beats rock! I win!');
+    }   
+    if(message.content == "!rps :v:"){
+        message.channel.send(':fist: Rock beats scissors! I win!');
+    }  
+    if(message.content == "!rps :raised_hand:"){
+        message.channel.send(':fist: Paper beats rock! You win....');
+    }  
     if(new RegExp('^!macro').exec(message.content) ){
  
         var data = message.content.toLowerCase().split(' ');
