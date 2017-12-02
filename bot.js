@@ -36,6 +36,12 @@ bot.on('message', (message) => {
         }
  
     }
+    if(new RegExp('^!repeat').exec(message.content) ){
+ 
+        var data = message.content.toLowerCase().split(' ');
+        message.channel.send(data[1]);
+ 
+    }
 });
  
 bot.login(process.env.BOT_TOKEN);
