@@ -8,7 +8,7 @@ bot.on('message', (message) => {
         message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro');
     }  
     if(message.content.toLowerCase() == "poke"){
-        message.channel.send('ouchy');
+        message.channel.send('Owie! What did I ever do to you?');
     
     }
     
