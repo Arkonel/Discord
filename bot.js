@@ -11,8 +11,9 @@ bot.on('message', (message) => {
         var rand = Math.random();
         if (rand < .7) {
          message.channel.send('Owie! What did I ever do to you?');
-    } else {
+        } else {
          message.channel.send('I poke you back!');
+       }
     }
     
     if(new RegExp('^!macro').exec(message.content)){
