@@ -12,7 +12,7 @@ bot.on('message', (message) => {
         if (!message.guild) return;
         // Only try to join the sender's voice channel if they are in one themselves
         if (message.member.voiceChannel) {
-          message.member.voiceChannel.join();
+          voiceChannel.join();
           message.reply('Attempting to join ' + message.member.voiceChannel.toString());
         } else {
           message.reply('You need to join a voice channel first!');
