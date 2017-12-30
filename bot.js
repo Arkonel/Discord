@@ -6,7 +6,22 @@ bot.on('message', (message) => {
  
     if(message.content == "Fairy-Bot"){
         message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro');
-    }  
+    }
+    if(message.content == "!music join"){
+     if (!message.guild) return;
+     // Only try to join the sender's voice channel if they are in one themselves
+     if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => { // Connection is an instance of VoiceConnection
+          message.reply('I have successfully connected to the channel!');
+        })
+        .catch(console.log);
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
+  }
+    } 
+  
     if(message.content.toLowerCase() == "poke"){
         var rand = Math.random();
         if (rand < .7) {
