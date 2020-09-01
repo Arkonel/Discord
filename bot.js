@@ -13,6 +13,11 @@ bot.on('message', (message) => {
     }
        
  
+    if(message.content == "ChannelID"){
+        message.channel.send(message.channel.name);
+    }
+       
+ 
  
     if(message.content == "!music join"){
         if (!message.guild) return;
