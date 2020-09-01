@@ -7,7 +7,13 @@ bot.on('message', (message) => {
     if(message.content == "Fairy-Bot"){
         message.channel.send('Hi, im a bot heres a list of my current commands:\n!macro');
     }
-    
+  
+    if(message.content == "GuildID"){
+        message.channel.send(message.guild.id);
+    }
+       
+ 
+ 
     if(message.content == "!music join"){
         if (!message.guild) return;
         // Only try to join the sender's voice channel if they are in one themselves
