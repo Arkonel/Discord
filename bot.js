@@ -9,7 +9,7 @@ bot.on('message', (message) => {
     }
   
     if(message.content == "GuildID"){
-        message.channel.send(message.guild);
+        message.channel.send(message.guild.id);
     }
        
  
